@@ -61,7 +61,7 @@
     sql: ${TABLE}.state
 
   - dimension: zip
-    type: number
+    type: zipcode
     sql: ${TABLE}.zip
 
   - measure: count
