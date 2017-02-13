@@ -77,7 +77,7 @@
 #       relationship: many_to_one
 # 
 # 
-# - explore: users
+- explore: users
 # 
 # - explore: users_nn
 
