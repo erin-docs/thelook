@@ -19,6 +19,16 @@
     type: number
     # hidden: true
     sql: ${TABLE}.user_id
+    
+  - measure: count_with_link
+    type: count
+    links:
+      - label: 'test for 19235'
+        url: http://www.google.com
+        
+  - measure: big_number
+    type: number
+    sql: ${count}*1000000000
 
   - measure: count
     type: count
