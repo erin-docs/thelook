@@ -29,4 +29,3 @@
   - measure: count
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
-
