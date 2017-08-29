@@ -1,4 +1,5 @@
 - view: user_data
+  sql_table_name: demo_db.user_data
   fields:
 
   - dimension: id
@@ -16,7 +17,7 @@
 
   - dimension: user_id
     type: number
-    # hidden: true
+    # hidden: yes
     sql: ${TABLE}.user_id
 
   - measure: count

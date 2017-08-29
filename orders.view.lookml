@@ -1,4 +1,5 @@
 - view: orders
+  sql_table_name: demo_db.orders
   fields:
 
   - dimension: id
@@ -8,7 +9,7 @@
 
   - dimension_group: created
     type: time
-    timeframes: [time, date, week, month, month_num, year, day_of_week_index, hour_of_day, minute5]
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at
 
   - dimension: status
@@ -17,7 +18,7 @@
 
   - dimension: user_id
     type: number
-    # hidden: true
+    # hidden: yes
     sql: ${TABLE}.user_id
 
   - measure: count

@@ -40,44 +40,30 @@
       type: left_outer 
       sql_on: ${orders.user_id} = ${users.id}
       relationship: many_to_one
-      
-    - join: order_facts
-      view_label: 'Orders'
-      relationship: many_to_one
-      sql_on: ${order_facts.order_id} = ${order_items.order_id}  
-      
-    - join: user_order_facts
-      view_label: 'Users'
-      relationship: many_to_one
-      sql_on: ${orders.user_id} = ${user_order_facts.user_id}
 
 
 - explore: orders
+  description: 'orders'
   joins:
     - join: users
       type: left_outer 
       sql_on: ${orders.user_id} = ${users.id}
       relationship: many_to_one
-      
-    - join: order_facts 
-      view_label: 'Orders'
-      relationship: one_to_one
-      sql_on: ${order_facts.order_id} = ${orders.id}  
 
-#
-# - explore: products
 
-# - explore: schema_migrations
-# 
-# - explore: user_data
-#   joins:
-#     - join: users
-#       type: left_outer 
-#       sql_on: ${user_data.user_id} = ${users.id}
-#       relationship: many_to_one
-# 
-# 
-# - explore: users
-# 
-# - explore: users_nn
+- explore: products
+
+- explore: schema_migrations
+
+- explore: user_data
+  joins:
+    - join: users
+      type: left_outer 
+      sql_on: ${user_data.user_id} = ${users.id}
+      relationship: many_to_one
+
+
+- explore: users
+
+- explore: users_nn
 

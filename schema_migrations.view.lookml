@@ -1,4 +1,5 @@
 - view: schema_migrations
+  sql_table_name: demo_db.schema_migrations
   fields:
 
   - dimension: filename

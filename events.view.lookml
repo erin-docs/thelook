@@ -1,15 +1,11 @@
 - view: events
+  sql_table_name: demo_db.events
   fields:
 
   - dimension: id
     primary_key: true
     type: number
     sql: ${TABLE}.id
-
-  - dimension_group: created
-    type: time
-    timeframes: [time, date, week, month]
-    sql: ${TABLE}.created_at
 
   - dimension: type_id
     type: number

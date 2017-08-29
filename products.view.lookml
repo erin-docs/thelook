@@ -1,4 +1,5 @@
 - view: products
+  sql_table_name: demo_db.products
   fields:
 
   - dimension: id
@@ -11,12 +12,10 @@
     sql: ${TABLE}.brand
 
   - dimension: category
-    alias: [category_name]
     type: string
     sql: ${TABLE}.category
 
   - dimension: department
-    alias: [department_name]
     type: string
     sql: ${TABLE}.department
 
@@ -35,13 +34,6 @@
   - dimension: sku
     type: string
     sql: ${TABLE}.sku
-    
-  - dimension: image_file
-    sql: (concat('http://www.looker.com/_content/docs/99-hidden/images/image_',${id},'.png'))
-
-  - dimension: product_image
-    sql: ${image_file}
-    html: <img src="{{ value }}" width="100" height="100"/>    
 
   - measure: count
     type: count

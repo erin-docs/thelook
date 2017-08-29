@@ -1,4 +1,5 @@
 - view: users
+  sql_table_name: demo_db.users
   fields:
 
   - dimension: id
@@ -9,12 +10,6 @@
   - dimension: age
     type: number
     sql: ${TABLE}.age
-    
-  - dimension: age_tier
-    type: tier
-    style: integer
-    sql: ${age}
-    tiers: [0,10,20,30,40,50,60,70,80]    
 
   - dimension: city
     type: string
@@ -22,11 +17,12 @@
 
   - dimension: country
     type: string
+    map_layer: countries
     sql: ${TABLE}.country
 
   - dimension_group: created
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at
 
   - dimension: email
@@ -34,7 +30,6 @@
     sql: ${TABLE}.email
 
   - dimension: first_name
-    hidden: true
     type: string
     sql: ${TABLE}.first_name
 
@@ -43,25 +38,15 @@
     sql: ${TABLE}.gender
 
   - dimension: last_name
-    hidden: true
     type: string
     sql: ${TABLE}.last_name
-    
-  - dimension: name
-    sql: CONCAT(${first_name},' ',${last_name})
-    
-  - dimension: history
-    sql: ${TABLE}.id
-    html: |
-      <a href="/explore/thelook/orders?fields=orders.detail*&f[users.id]={{ value }}">Orders</a>
-      | <a href="/explore/thelook/order_items?fields=order_items.detail*&f[users.id]={{ value }}">Items</a>    
 
   - dimension: state
     type: string
     sql: ${TABLE}.state
 
   - dimension: zip
-    type: number
+    type: zipcode
     sql: ${TABLE}.zip
 
   - measure: count

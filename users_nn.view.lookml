@@ -1,5 +1,5 @@
 - view: users_nn
-  sql_table_name: usersNN
+  sql_table_name: demo_db.usersNN
   fields:
 
   - dimension: id
