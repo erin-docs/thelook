@@ -2,6 +2,8 @@
 
 - include: "events.view.lookml"       # include all the views
 
+- label: 'zbug31389_testing_toposjon_map'
+
 - map_layers:
   - name: AU_map
     file: "australian_states.topojson"
