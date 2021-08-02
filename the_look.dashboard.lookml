@@ -1,5 +1,5 @@
 - dashboard: test_dashboard
-  title: Test Dashboard
+  title: The Look
   layout: grid
 #   tile_size: 100
 
