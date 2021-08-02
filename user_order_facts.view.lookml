@@ -11,7 +11,7 @@
             LEFT JOIN orders ON order_items.order_id = orders.id
             GROUP BY user_id
             
-    sql_trigger_value: select now()
+    datagroup_trigger: orders_datagroup
 
   fields:
   - measure: count
